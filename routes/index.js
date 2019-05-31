@@ -22,5 +22,7 @@ router.post('/register',
 router.get('/login', redirectIfAuthenticated, userController.loginForm);
 router.post('/login', redirectIfAuthenticated, userController.login);
 
+router.get('/logout', userController.logout);
+
 
 module.exports = router;

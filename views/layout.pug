@@ -1,4 +1,5 @@
 include mixins/_header
+include mixins/_alert
 doctype html
 html
   head
@@ -9,6 +10,10 @@ html
     link(href="/css/style.css" rel="stylesheet")
   body
     //- Include the header layout
+    if flashes.error
+      +alertDanger(flashes.error[0])
+    if flashes.success
+      +alertSuccess(flashes.success[0])
     +headerLayout
     .container-fluid.mt-4
       block content

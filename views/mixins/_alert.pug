@@ -1,0 +1,13 @@
+mixin alertDanger(message)
+  .alert.alert-danger.alert-dismissible.fade.show.px-2.mb-0.rounded-0
+    strong.d-inline-block.pr-3 Something went wrong
+    | #{message}
+    button.close(type="button" data-dismiss="alert")
+      span &times;
+
+mixin alertSuccess(message)
+  .alert.alert-success.alert-dismissible.fade.show.px-2.mb-0.rounded-0
+    strong.d-inline-block.pr-3 Success!
+    | #{message}
+    button.close(type="button" data-dismiss="alert")
+      span &times;

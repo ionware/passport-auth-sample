@@ -9,6 +9,7 @@ const passport = require('passport');
 const path = require('path');
 const expressValidator = require('express-validator');
 const indexRoute = require('./routes/index');
+const secretRoute = require('./routes/user');
 const errorHandler = require('./hanlders/errorHandler');
 require('./config/auth-passport');
 
@@ -50,6 +51,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRoute);
+app.use('/secret', secretRoute);
+
 // If our middleware gets here, then requested route isn't listed.
 app.use(errorHandler.notFound);
 

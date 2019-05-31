@@ -3,7 +3,10 @@ mixin headerLayout()
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       a.navbar-brand(href="/") Passport Auth
       button.navbar-toggler(type="button" data-toggle="collapse" data-target="#headerNavbar")
-        img.avatar(src=`${user.gravatar}` alt=(user.firstName))
+        if user
+          img.avatar(src=`${user.gravatar}` alt=(user.firstName))
+        else
+          span.navbar-toggler-icon
 
       .collapse.navbar-collapse(id="headerNavbar")
         ul.navbar-nav.ml-auto
