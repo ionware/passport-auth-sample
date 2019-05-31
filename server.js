@@ -17,6 +17,6 @@ require('./models/User');
 
 const app = require('./app');
 // Light Up the Server!!
-app.listen(process.env.APP_PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Server started on PORT ---> ${process.env.APP_PORT}`);
 });
