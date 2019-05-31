@@ -2,14 +2,20 @@ mixin headerLayout()
   header
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       a.navbar-brand(href="/") Passport Auth
-      button.navbar-toggler(type="button" data-toggle="collapse" data-target="headerNavbar")
-        span.navbar-toggler-icon
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#headerNavbar")
+        img.avatar(src=`${user.gravatar}` alt=(user.firstName))
 
       .collapse.navbar-collapse(id="headerNavbar")
         ul.navbar-nav.ml-auto
           li.nav-item
             a.nav-link(href="/") Home
-          li.nav-item
-            a.nav-link(href="/login") Login
-          li.nav-item
-            a.nav-link(href="/register") Sign Up
+          if !user
+            li.nav-item
+              a.nav-link(href="/login") Login
+            li.nav-item
+              a.nav-link(href="/register") Sign Up
+          else
+            li.nav-item
+              a.nav-link(href="/logout") Logout
+            li.nav-item
+              img.avatar(src=`${user.gravatar}` alt=(user.firstName))
