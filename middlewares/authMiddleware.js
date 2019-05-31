@@ -8,8 +8,8 @@ exports.redirectIfAuthenticated = (req, res, next) => {
 
 exports.isLoggedIn = (req, res, next) => {
     if (!req.user) {
+        req.flash('error', 'Please sign in before seeing the secret message.');
         return res.redirect('/login');
     }
-    req.flash('error', 'Please sign in before seeing the secret message.');
     return next();
 };

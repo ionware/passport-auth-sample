@@ -4,7 +4,9 @@ const { redirectIfAuthenticated } = require('../middlewares/authMiddleware');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', {
+        title: 'Secret Message Inside'
+    });
 });
 
 router.get('/register',

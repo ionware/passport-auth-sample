@@ -4,7 +4,11 @@ block content
   .container
     .row.justify-content-center
       .col-12.col-sm-10.col-md-5
-        h4 Hello World
-        p Zetas crescere in sala! Cur mortem unda? Ubi est secundus brodium?
-        | Eheu, silva! Nunquam perdere turpis. Eheu. Ubi est alter barcas?
-        | Frondators mori, tanquam nobilis hippotoxota. Volare unus ducunt ad emeritis hibrida.
+        h4 Hello #{user ? user.firstName : 'Guest' }
+        p You are one step away from reading the embedded secret message. It simply take
+        | a step. Create an account by clicking the register, fill in your correct details
+        | and sign in. Then and only then can you see the secret message.
+
+        if user
+          p.mt-4 It appears that you have signed In, visit this link to see the
+            a(href="/secret") secret message.
