@@ -1,0 +1,13 @@
+include mixins/_header
+doctype html
+html
+  head
+    title= title
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js")
+  body
+    //- Include the header layout
+    +headerLayout
+    .container-fluid.mt-4
+      block content
