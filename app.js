@@ -4,6 +4,7 @@ const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const passport = require('passport');
 const path = require('path');
 const expressValidator = require('express-validator');
 const indexRoute = require('./routes/index');
@@ -30,6 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Configure our view engine to be Pug.
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+// Enable passport for authentication
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRoute);
 // If our middleware gets here, then requested route isn't listed.

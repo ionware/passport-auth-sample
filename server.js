@@ -10,10 +10,12 @@ mongoose.connect(process.env.DB_CONNECTION, {
 mongoose.connection.on('error', (error) => {
     console.error(error.message());
 });
-
 mongoose.connection.on('connected', () => {
     console.log('Database connected Successfully.');
 });
+
+// Register all our Models here...
+require('./models/User');
 
 // Light Up the Server!!
 app.listen(process.env.APP_PORT, () => {
