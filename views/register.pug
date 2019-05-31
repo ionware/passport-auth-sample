@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container.mt-4
+    .row
+      .col-12
+        h2 Sign Up
+        p It only take a minute to get started.
+    .row
+      .col-12.col-sm-8.col-md-5
+        form(method="POST" action="/register")
+          .form-row
+            .form-group.col-12.col-sm-6
+              label(for="firstname")
+              input.form-control(type="text" placeholder="First name" name="firstName" id="firstname")
+            .form-group.col-12.col-sm-6
+              label(for="lastname")
+              input.form-control(type="text" placeholder="Last Name" name="lastName" id="lastname")
+          .form-row
+            .form-group.col-12
+              label(for="email") Email Address
+              input.form-control(type="email" placeholder="Email Address" name="email" id="email")
+          .form-row
+            .form-group.col-12
+              label(for="password") Password
+              input.form-control(type="password" placeholder="Password" name="password" id="password" required=true)
+          .form-row
+            .form-group.col-12
+              label(for="confirm_password") Confirm Password
+              input.form-control(type="password" placeholder="Repeat password" name="confirm_password" id="confirm_password" required=true)
+          .form-row
+            .form-group.col-12
+              button.btn.btn-primary.btn-block.py-3(type="submit") Get Started

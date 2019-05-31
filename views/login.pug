@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .container.mt-4
+    .row
+      .col-12
+        pre= JSON.stringify(flashes, null, 2)
+        h2 Log In
+        p Sign into your existing Account.
+    .row
+      .col-12.col-sm-8.col-md-5
+        form(method="POST" action="/login")
+          .form-row
+            .form-group.col-12
+              label(for="email") Email Address
+              input.form-control(type="email" placeholder="Email Address" name="email" id="email" required=true)
+          .form-row
+            .form-group.col-12
+              label(for="password") Password
+              input.form-control(type="password" placeholder="Password" name="password" id="password" required=true)
+          .form-row
+            .form-group.col-12
+              button.btn.btn-secondary.btn-block.py-3(type="submit") Sign In
