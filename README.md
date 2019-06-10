@@ -22,6 +22,6 @@ npm start
 ```
 ## Todo
 - [x] Implement Passport Local strategy.
-- [ ] Implement passport-facebook strategy
+- [x] Implement passport-facebook strategy
 - [ ] Implement passport-twitter strategy
 - [ ] Implement passport-linkedIn strategy

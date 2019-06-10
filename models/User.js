@@ -21,14 +21,15 @@ const userSchema = new Schema({
         trim: true,
         unique: true,
         validate: [validator.isEmail, 'Oops! That\'s an Invalid email address.'],
-    }
+    },
+    socials: [Object]
 });
 
 // Apply passport-local-mongoose and set its default username field to be email.
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 
 userSchema.virtual('gravatar').get(function() {
-    const hash = md5(this.email);
+    const hash = md5(this.email || this.facebook.email);
     return `https://gravatar.com/avatar/${hash}?size=60`;
 });
 

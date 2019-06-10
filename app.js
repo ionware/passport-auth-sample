@@ -12,12 +12,13 @@ const indexRoute = require('./routes/index');
 const secretRoute = require('./routes/user');
 const errorHandler = require('./hanlders/errorHandler');
 require('./config/auth-passport');
+require('./config/facebook');
 
 const app = express();
 
 // Take request payloads into body.
 app.use(bodyParser.json());
-app.use(bodyParser({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Let us have support for session.
 app.use(session({
