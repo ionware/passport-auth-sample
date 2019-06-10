@@ -20,3 +20,5 @@ exports.developmentErrors = (err, req, res, next) => {
 
     res.json(JSON.stringify(err, null, 2));
 };
+
+// Setup Production error here...
